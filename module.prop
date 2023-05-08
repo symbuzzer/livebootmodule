@@ -1,0 +1,7 @@
+id=livebootmagisk
+name=LiveBoot
+version=v1.0.0
+versionCode=100
+author=Ali Beyaz
+description=Chainfire's LiveBoot's Magisk Module
+updateJson=https://raw.githubusercontent.com/symbuzzer/livebootmagisk/main/update.json
