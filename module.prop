@@ -1,7 +1,7 @@
 id=livebootmagisk
 name=LiveBoot
 version=v1.0.1
-versionCode=10
+versionCode=101
 author=Ali Beyaz
 description=A magisk module that enables unix-style boot animation for Android devices
 updateJson=https://raw.githubusercontent.com/symbuzzer/livebootmagisk/main/update.json
