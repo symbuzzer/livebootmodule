@@ -1,8 +1,6 @@
 # LiveBoot Magisk Module
 
-Magisk Module of Chainfire's [LiveBoot](https://github.com/Chainfire/liveboot) app without any app or UI
-
-A magisk module that enables unix-style boot animation for Android devices
+A Magisk module that enables unix-style boot animation for Android devices - Magisk module of Chainfire's [LiveBoot](https://github.com/Chainfire/liveboot) app without any app or UI
 
 Preview: https://www.youtube.com/watch?v=N0tqzVWxpJk
 
