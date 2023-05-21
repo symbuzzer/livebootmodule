@@ -1,3 +1,6 @@
+## v1.0.2  
+- Added create&release workflow
+  
 ## v1.0.1  
 - Fixed changelog.md path bug  
 - Changed description of the module  
