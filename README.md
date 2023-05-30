@@ -4,7 +4,7 @@ A magisk module that enables unix-style (verbose) boot animation for Android dev
 
 Preview: https://www.youtube.com/watch?v=N0tqzVWxpJk
 
-Tested on Mi 10T Pro with PixelExperence Plus 13. Should work all AOSP based custom ROMs.
+Tested on Mi 10T Pro with PixelExperence Plus 13, Poco X3 Pro with stock MIUI 14 (Android 13). Should work all AOSP based custom ROMs and MIUI ROMs.
 
 0000bootlive (original is 0000liveboot), liveboot(.apk), libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by ["Jorrit Chainfire Jongma"](https://github.com/Chainfire).   
 For detailed licenses: [COPYING](https://github.com/Chainfire/liveboot/blob/master/LICENSE), [LICENSE](https://github.com/Chainfire/liveboot/blob/master/COPYING)
