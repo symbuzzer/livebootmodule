@@ -1,7 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------
 ## v1.0.4  
-- Modified author info
+- Changed update url with general one
+- Modified author info  
   
 ## v1.0.3  
 - Added KernelSU support  
