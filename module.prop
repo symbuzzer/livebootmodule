@@ -1,7 +1,7 @@
 id=livebootmagisk
 name=LiveBoot
-version=v1.0.3
-versionCode=103
-author=Ali Beyaz
+version=v1.0.4
+versionCode=104
+author=Ali Beyaz (avalibeyaz.com/github)
 description=A Magisk and KernelSU module that enables unix-style boot animation for Android devices
 updateJson=https://raw.githubusercontent.com/symbuzzer/livebootmagisk/main/update.json
