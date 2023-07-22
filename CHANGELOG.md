@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
---------------
+--------------  
+## v1.0.5  
+- Necessary changes were made to change the project name  
+  
 ## v1.0.4  
 - Changed update url with general one
 - Modified author info  
