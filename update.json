@@ -1,6 +1,6 @@
 {
-  "version": "v1.0.6",
-  "versionCode": "106",
-  "zipUrl": "https://github.com/symbuzzer/livebootmagisk/releases/latest/download/livebootmagisk.zip",
-  "changelog": "https://raw.githubusercontent.com/symbuzzer/livebootmagisk/main/CHANGELOG.md"
+  "version": "v1.1.0",
+  "versionCode": "110",
+  "zipUrl": "https://github.com/symbuzzer/livebootmodule/releases/latest/download/livebootmodule.zip",
+  "changelog": "https://raw.githubusercontent.com/symbuzzer/livebootmodule/main/CHANGELOG.md"
 }
