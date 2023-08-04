@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v1.1.1  
+- Fixed disabling module
+  
 ## v1.1.0  
 - Project and module name changed to "livebootmodule" from "livebootmagisk"
   
