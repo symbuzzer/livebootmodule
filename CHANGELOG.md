@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v1.1.2  
+- Updated README.md  
+  
 ## v1.1.1  
 - Fixed disabling module
   
