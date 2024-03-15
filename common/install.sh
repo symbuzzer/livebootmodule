@@ -24,7 +24,7 @@ if ! test -e \"\$DISABLE\"; then
   dmesg=0--1
   lines=80
   wordwrap
-fi" > /system/bootlive/0000bootlive
+fi" > $MODPATH/0000bootlive
 
 install_script -p $MODPATH/0000bootlive
 install_script -l $MODPATH/0000bootlive
