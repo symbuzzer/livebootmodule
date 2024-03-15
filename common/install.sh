@@ -1,7 +1,12 @@
+# Dumpsys çıktısını al
 display_info=$(dumpsys display | grep -i real | grep -vi overridedisplay)
-resolution=$(echo "$display_info" | grep -o 'real.*')
-width=$(echo "$resolution" | grep -oP '(?<=real )\d+(?= x )')
-height=$(echo "$resolution" | grep -oP '(?<= x )\d+')
+
+# Genişlik ve yükseklik değerlerini almak için dizeyi işle
+resolution=$(echo "$display_info" | sed -n 's/.*real \([0-9]\+\) x \([0-9]\+\).*/\1x\2/p')
+
+# Genişlik ve yükseklik değerlerini al
+width=$(echo "$resolution" | cut -d 'x' -f 1)
+height=$(echo "$resolution" | cut -d 'x' -f 2)
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
