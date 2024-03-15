@@ -3,8 +3,6 @@ result=$(dumpsys display | grep -i real | grep -Eo 'real\s+(\d+)x(\d+)')
 if [[ ! -z "$result" ]]; then
   width=${result%%x*}
   height=${result##*x}
-  echo "Width: $width"
-  echo "Height: $height"
 fi
 
 
