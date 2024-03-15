@@ -1,9 +1,5 @@
-result=$(dumpsys display | grep -i real | grep -Eo 'real\s+(\d+)x(\d+)')
-
-if [[ ! -z "$result" ]]; then
-  width=${result%%x*}
-  height=${result##*x}
-fi
+width=$(dumpsys display | grep -i real | awk '{print $NF-1}')
+height=$(dumpsys display | grep -i real | awk '{print $NF}')
 
 
 ui_print "- Getting screen size"
