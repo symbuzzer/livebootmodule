@@ -1,13 +1,9 @@
-# Dumpsys çıktısını al
-display_info=$(dumpsys display | grep -i real | grep -vi overridedisplay)
+# Komut çıktısını al ve 'real' değerini grep ile filtrele
+output=$(dumpsys display | grep -i real | grep -vi overridedisplay)
 
-# Genişlik ve yükseklik değerlerini bul
-resolution=$(echo "$display_info" | grep -oP 'real \K\d+ x \d+')
-
-# Genişlik ve yükseklik değerlerini al
-IFS='x' read -ra resolution_array <<< "$resolution"
-width="${resolution_array[0]}"
-height="${resolution_array[1]}"
+# 'real' değerinden width ve height değerlerini al
+width=$(echo "$output" | grep -oP 'real \K\d+(?= x)')
+height=$(echo "$output" | grep -oP 'real \d+ x \K\d+')
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
