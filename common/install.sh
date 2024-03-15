@@ -4,6 +4,9 @@ height=$(dumpsys display | grep -i real | grep -vi overridedisplay | awk '{print
 fallback_width="fallbackwidth=$width"
 fallback_height="fallbackheight=$height"
 
+ui_print "$fallback_width"
+ui_print "$fallback_height"
+
 echo "#!/system/bin/sh
 #app_process=/system/bin/app_process64
 DISABLE=\"/data/adb/modules/livebootmagisk/disable\"
