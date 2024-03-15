@@ -1,9 +1,12 @@
-# Dumpsys çıktısını al ve genişlik ve yükseklik bilgilerini al
+# Dumpsys çıktısını al
 display_info=$(dumpsys display | grep -i real | grep -vi overridedisplay)
 
-# Genişlik ve yükseklik değerlerini awk kullanarak al
-width=$(echo "$display_info" | awk '{match($0, /real ([0-9]+) x ([0-9]+)/, arr); print arr[1]}')
-height=$(echo "$display_info" | awk '{match($0, /real ([0-9]+) x ([0-9]+)/, arr); print arr[2]}')
+# Genişlik ve yükseklik değerlerini almak için dizeyi işle
+resolution=$(echo "$display_info" | grep -oP 'real \K\d+ x \d+')
+
+# Genişlik ve yükseklik değerlerini al
+width=$(echo "$resolution" | cut -d ' ' -f 1)
+height=$(echo "$resolution" | cut -d ' ' -f 3)
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
