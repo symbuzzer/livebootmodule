@@ -8,7 +8,7 @@ ui_print "  - $output"
 ui_print "  - $width"
 ui_print "  - $height"
 
-cat > $TMPDIR/0000bootlive <<EOF
+cat > $MODPATH/0000bootlive <<EOF
 #!/system/bin/sh
 #app_process=/system/bin/app_process64
 DISABLE="/data/adb/modules/livebootmagisk/disable"
@@ -19,8 +19,8 @@ EOF
 
 ui_print "- Boot script created"
 
-install_script -p $TMPDIR/0000bootlive
-install_script -l $TMPDIR/0000bootlive
+install_script -p $MODPATH/0000bootlive
+install_script -l $MODPATH/0000bootlive
 
 ui_print "- Boot script copied necassary places"
 ui_print "- Continuing to install"
