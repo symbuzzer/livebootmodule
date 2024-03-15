@@ -1,7 +1,6 @@
-# Komut çıktısını al ve 'real' değerini grep ile filtrele
 output=$(dumpsys display | grep -i real | grep -vi overridedisplay)
+ui_print "  - $output"
 
-# 'real' değerinden width ve height değerlerini al
 width=$(echo "$output" | grep -oP 'real \K\d+(?= x)')
 height=$(echo "$output" | grep -oP 'real \d+ x \K\d+')
 
