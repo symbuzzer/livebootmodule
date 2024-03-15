@@ -1,8 +1,5 @@
-output=$(dumpsys display | grep -i real | grep -vi overridedisplay)
-ui_print "  - $output"
-
-width=$(echo "$output" | grep -oP 'real \K\d+(?= x)')
-height=$(echo "$output" | grep -oP 'real \d+ x \K\d+')
+width=$(dumpsys display | grep -i real | grep -o -P '(?<=real )\d+' | head -1)
+height=$(dumpsys display | grep -i real | grep -o -P '\d+(?= x)')
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
