@@ -1,12 +1,9 @@
 width=$(dumpsys display | grep -E "real\s+([0-9]+)x([0-9]+)" -o | awk -F 'x' '{print $1}')
 height=$(dumpsys display | grep -E "real\s+([0-9]+)x([0-9]+)" -o | awk -F 'x' '{print $2}')
 
-fallback_width="fallbackwidth=$width"
-fallback_height="fallbackheight=$height"
-
 ui_print "- Getting screen size"
-ui_print "  - $fallback_width"
-ui_print "  - $fallback_height"
+ui_print "  - $width"
+ui_print "  - $height"
 
 echo "#!/system/bin/sh
 #app_process=/system/bin/app_process64
@@ -19,8 +16,8 @@ if ! test -e \"\$DISABLE\"; then
   /data/adb/modules/livebootmagisk/libdaemonize.so
   /system/bin/app_process64
   /system/bin --nice-name=eu.chainfire.liveboot:root eu.chainfire.liveboot.e.d /data/adb/modules/livebootmagisk/liveboot boot dark
-  $fallback_width
-  $fallback_height
+  fallbackwidth=$width
+  fallbackheight=$height
   logcatlevels=WEFS
   logcatbuffers=C
   logcatformat=brief
@@ -36,3 +33,4 @@ install_script -p $MODPATH/0000bootlive
 install_script -l $MODPATH/0000bootlive
 
 ui_print "- Boot script copied necassary places"
+ui_print "- Continuing to install"
