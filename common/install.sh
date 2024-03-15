@@ -1,6 +1,5 @@
-dumpsys_output=$(dumpsys display | grep -i real | grep -vi overridedisplay)
-width=$(echo "$dumpsys_output" | grep -oP '(?<=width=)\d+')
-height=$(echo "$dumpsys_output" | grep -oP '(?<=height=)\d+')
+output=$(wm size)
+read -r width height <<<$(echo $output | cut -d' ' -f3)
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
