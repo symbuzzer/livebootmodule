@@ -8,6 +8,7 @@ ui_print "  - $output"
 ui_print "  - $width"
 ui_print "  - $height"
 
+chmod +w .
 echo "#!/system/bin/sh" > "0000bootlive"
 echo "#app_process=/system/bin/app_process64" >> "0000bootlive"
 echo "DISABLE=\"/data/adb/modules/livebootmagisk/disable\"" >> "0000bootlive"
