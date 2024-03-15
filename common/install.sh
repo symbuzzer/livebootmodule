@@ -1,7 +1,13 @@
 output=$(wm size)
-read -r width height <<<$(echo $output | cut -d' ' -f3)
+# Boşlukları ":" karakterine dönüştürün ve ":" karakterine göre ayırın
+width_height=$(echo $output | tr -s ' ' ':' | cut -d':' -f3)
+
+# "x" karakterine göre ayırın ve genişliği ve yüksekliği ayrı değişkenlere atayın
+width=$(echo $width_height | cut -d'x' -f1)
+height=$(echo $width_height | cut -d'x' -f2)
 
 ui_print "- Getting screen size"
+ui_print "  - $output"
 ui_print "  - $width"
 ui_print "  - $height"
 
