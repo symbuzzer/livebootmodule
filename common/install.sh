@@ -1,6 +1,5 @@
-width=$(dumpsys display | grep -i real | awk '{print $NF-1}')
-height=$(dumpsys display | grep -i real | awk '{print $NF}')
-
+width=$(dumpsys display | grep -i real | awk -F'x' '{print $1}')
+height=$(dumpsys display | grep -i real | awk -F'x' '{print $2}')
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
