@@ -1,6 +1,7 @@
 display_info=$(dumpsys display | grep -i real | grep -vi overridedisplay)
-width=$(echo "$display_info" | sed -n 's/.*real \([0-9]\+\) x \([0-9]\+\).*/\1/p')
-height=$(echo "$display_info" | sed -n 's/.*real \([0-9]\+\) x \([0-9]\+\).*/\2/p')
+resolution=$(echo "$display_info" | grep -o 'real.*')
+width=$(echo "$resolution" | grep -oP '(?<=real )\d+(?= x )')
+height=$(echo "$resolution" | grep -oP '(?<= x )\d+')
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
