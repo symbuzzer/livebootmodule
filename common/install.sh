@@ -1,5 +1,12 @@
-width=$(dumpsys display | grep -i real | sed -E 's/.*real\s+([0-9]+)\s+([0-9]+).*/\1/')
-height=$(dumpsys display | grep -i real | sed -E 's/.*real\s+([0-9]+)\s+([0-9]+).*/\2/')
+result=$(dumpsys display | grep -i real | grep -Eo 'real\s+(\d+)x(\d+)')
+
+if [[ ! -z "$result" ]]; then
+  width=${result%%x*}
+  height=${result##*x}
+  echo "Width: $width"
+  echo "Height: $height"
+fi
+
 
 ui_print "- Getting screen size"
 ui_print "  - $width"
