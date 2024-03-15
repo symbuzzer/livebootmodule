@@ -1,5 +1,9 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v2.0.0
+### !!! Warning, this is beta, it my not work! If you want to test whether the Android 14 patch works, update it. Otherwise, stay with the current version and wait for later versions. 
+- Added Android 14 support, thanks to [Chainfire](https://github.com/Chainfire)/[LiveBoot](https://github.com/Chainfire/liveboot)
+
 ## v1.1.2  
 - Updated README.md  
   
