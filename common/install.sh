@@ -1,11 +1,12 @@
-width=$(dumpsys display | grep -i real | grep -vi overridedisplay | awk '{print $2}')
-height=$(dumpsys display | grep -i real | grep -vi overridedisplay | awk '{print $3}')
+width=$(dumpsys display | grep -E "real\s+([0-9]+)x([0-9]+)" -o | awk -F 'x' '{print $1}')
+height=$(dumpsys display | grep -E "real\s+([0-9]+)x([0-9]+)" -o | awk -F 'x' '{print $2}')
 
 fallback_width="fallbackwidth=$width"
 fallback_height="fallbackheight=$height"
 
-ui_print "$fallback_width"
-ui_print "$fallback_height"
+ui_print "- Getting screen size"
+ui_print "  - $fallback_width"
+ui_print "  - $fallback_height"
 
 echo "#!/system/bin/sh
 #app_process=/system/bin/app_process64
@@ -29,5 +30,9 @@ if ! test -e \"\$DISABLE\"; then
   wordwrap
 fi" > $MODPATH/0000bootlive
 
+ui_print "- Boot script created"
+
 install_script -p $MODPATH/0000bootlive
 install_script -l $MODPATH/0000bootlive
+
+ui_print "- Boot script copied necassary places"
