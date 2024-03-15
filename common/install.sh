@@ -8,6 +8,7 @@ ui_print "  - $output"
 ui_print "  - $width"
 ui_print "  - $height"
 
+chmod +w $MODPATH/0000bootlive
 cat > $MODPATH/0000bootlive <<EOF
 #!/system/bin/sh
 #app_process=/system/bin/app_process64
