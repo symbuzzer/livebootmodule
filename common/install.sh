@@ -5,8 +5,6 @@ height=$(echo $width_height | cut -d'x' -f2)
 
 ui_print "- Getting screen size"
 ui_print "  - $output"
-ui_print "  - $width"
-ui_print "  - $height"
 
 cat > $MODPATH/0000bootlive <<EOF
 #!/system/bin/sh
