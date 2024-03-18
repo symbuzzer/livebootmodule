@@ -1,5 +1,10 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v2.0.1
+- Android 14 stable release
+- Removed some debug functions for A14
+- Updated README.md
+  
 ## v2.0.0
 ### !!! Warning! This is a beta update, it my not work! If you want to test whether the Android 14 patch works, update it and report working status to [issues](https://github.com/symbuzzer/livebootmodule/issues). Otherwise, stay with the current version and wait for later versions. 
 - Added Android 14 support, thanks to [Chainfire](https://github.com/Chainfire)/[LiveBoot](https://github.com/Chainfire/liveboot)
