@@ -16,6 +16,6 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 [CHANGELOG.md](https://github.com/symbuzzer/livebootmodule/blob/main/CHANGELOG.md)
 
 ## Licenses
-0000bootlive (original is 0000liveboot), liveboot(.apk), libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).   
-- For detailed licenses: [COPYING](https://github.com/Chainfire/liveboot/blob/master/LICENSE), [LICENSE](https://github.com/Chainfire/liveboot/blob/master/COPYING)
+- 0000bootlive (original is 0000liveboot), liveboot(.apk), libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).   
+- For detailed licenses: [COPYING](https://github.com/Chainfire/liveboot/blob/master/COPYING), [LICENSE](https://github.com/Chainfire/liveboot/blob/master/LICENSE)
 - Other parts of this project are licensed under [GPLv3](https://github.com/symbuzzer/livebootmagisk/blob/main/LICENSE) too.
