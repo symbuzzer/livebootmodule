@@ -4,6 +4,7 @@ For support this project: [Patreon](https://avalibeyaz.com/patreon)
 - Android 14 stable release
 - Removed some debug functions for A14
 - Updated README.md
+- Changed versionCode structure to xxyyzz (for example for v2.0.1 is 020001, not 201 now)
   
 ## v2.0.0
 ### !!! Warning! This is a beta update, it my not work! If you want to test whether the Android 14 patch works, update it and report working status to [issues](https://github.com/symbuzzer/livebootmodule/issues). Otherwise, stay with the current version and wait for later versions. 
