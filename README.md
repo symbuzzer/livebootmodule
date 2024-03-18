@@ -1,7 +1,7 @@
 # LiveBoot Magisk & KernelSU & APatch Module
 
 - A Magisk, KernelSU and APatch module that enables unix-style (verbose) boot animation for Android devices
-- Magisk and KernelSU module of [Chainfire](https://github.com/Chainfire)'s [LiveBoot](https://github.com/Chainfire/liveboot) app without any app or UI
+- Magisk, KernelSU and APatch module of [Chainfire](https://github.com/Chainfire)'s [LiveBoot](https://github.com/Chainfire/liveboot) app without any app or UI
 
 Preview: https://www.youtube.com/watch?v=N0tqzVWxpJk
 
