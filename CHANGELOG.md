@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v2.0.2
+- Try to use KernelSU's new feature "webroot html UI" (thanks to [0x0021](https://github.com/0x0021))
+  
 ## v2.0.1
 - Android 14 stable release
 - Removed some debug functions for A14
