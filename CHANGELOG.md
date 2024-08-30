@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v2.0.3
+- Removed unnecessary "install_script -l $MODPATH/0000bootlive" command from "/common/install.sh"
+  
 ## v2.0.2
 - Try to use KernelSU's new feature "webroot html UI" (thanks to [0x0021](https://github.com/0x0021))
   
