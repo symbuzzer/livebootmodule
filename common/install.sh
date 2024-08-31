@@ -18,6 +18,7 @@ EOF
 ui_print "- Boot script created"
 
 install_script -p $MODPATH/0000bootlive
+install_script -l $MODPATH/0000bootlive
 
-ui_print "- Boot script copied necassary place"
+ui_print "- Boot script copied necessary places"
 ui_print "- Continuing to install"
