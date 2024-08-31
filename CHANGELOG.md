@@ -1,5 +1,9 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v2.0.4
+- Readded "install_script -l $MODPATH/0000bootlive" command to "/common/install.sh" due some devices still need it.  
+- [MMT-Extended](https://github.com/Zackptg5/MMT-Extended/commit/4331310fb19d28e3388ae0c5f155228fdfcb178d) updated to 3.7  
+  
 ## v2.0.3
 - Removed unnecessary "install_script -l $MODPATH/0000bootlive" command from "/common/install.sh"
   
