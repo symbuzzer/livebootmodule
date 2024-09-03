@@ -11,7 +11,11 @@ cat > $MODPATH/0000bootlive <<EOF
 #app_process=/system/bin/app_process64
 DISABLE="/data/adb/modules/livebootmagisk/disable"
 if ! test -e "\$DISABLE"; then
-  NO_ADDR_COMPAT_LAYOUT_FIXUP=1 ANDROID_ROOT=/system LD_LIBRARY_PATH=/system/lib64:/system/lib64/drm:/system/lib64/hw:/vendor/lib64:/vendor/lib64/camera:/vendor/lib64/egl:/vendor/lib64/hw:/vendor/lib64/mediacas:/vendor/lib64/mediadrm:/vendor/lib64/soundfx:/system/bin:/librootjava CLASSPATH=/data/adb/modules/livebootmagisk/liveboot /data/adb/modules/livebootmagisk/libdaemonize.so /system/bin/app_process64 /system/bin --nice-name=eu.chainfire.liveboot:root V.d /data/adb/modules/livebootmagisk/liveboot boot dark logcatlevels=WEFS logcatbuffers=C logcatformat=brief logcatnocolors dmesg=0--1 lines=80 wordwrap fallbackwidth=$width fallbackheight=$height 
+  if [ -f "/data/adb/liveboot.args.txt" ]; then
+    NO_ADDR_COMPAT_LAYOUT_FIXUP=1 ANDROID_ROOT=/system LD_LIBRARY_PATH=/system/lib64:/system/lib64/drm:/system/lib64/hw:/vendor/lib64:/vendor/lib64/camera:/vendor/lib64/egl:/vendor/lib64/hw:/vendor/lib64/mediacas:/vendor/lib64/mediadrm:/vendor/lib64/soundfx:/system/bin:/librootjava CLASSPATH=/data/adb/modules/livebootmagisk/liveboot /data/adb/modules/livebootmagisk/libdaemonize.so /system/bin/app_process64 /system/bin --nice-name=eu.chainfire.liveboot:root V.d /data/adb/modules/livebootmagisk/liveboot boot \$(cat "/data/adb/liveboot.args.txt")
+  else
+    NO_ADDR_COMPAT_LAYOUT_FIXUP=1 ANDROID_ROOT=/system LD_LIBRARY_PATH=/system/lib64:/system/lib64/drm:/system/lib64/hw:/vendor/lib64:/vendor/lib64/camera:/vendor/lib64/egl:/vendor/lib64/hw:/vendor/lib64/mediacas:/vendor/lib64/mediadrm:/vendor/lib64/soundfx:/system/bin:/librootjava CLASSPATH=/data/adb/modules/livebootmagisk/liveboot /data/adb/modules/livebootmagisk/libdaemonize.so /system/bin/app_process64 /system/bin --nice-name=eu.chainfire.liveboot:root V.d /data/adb/modules/livebootmagisk/liveboot boot dark logcatlevels=WEFS logcatbuffers=C logcatformat=brief logcatnocolors dmesg=0--1 lines=80 wordwrap fallbackwidth=$width fallbackheight=$height 
+  fi
 fi
 EOF
 
