@@ -283,7 +283,7 @@ function useFindExistingFile(filePaths) {
   }, [config])
 }
 
-const serviceFiles = ["/data/adb/service.d/0000bootlive", "/data/adb/post-fs-data.d/0000bootlive"]
+const serviceFiles = ["/data/adb/service.d/0000bootlive", "/data/adb/post-fs-data.d/0000bootlive", "/data/adb/modules/livebootmagisk/0000bootlive"]
 const App = () => {
   const serviceScript = useFindExistingFile(serviceFiles)
 
