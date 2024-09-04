@@ -16,20 +16,15 @@ import {
   Button,
   Divider,
   TextField,
+  Box,
   DialogActions
 } from "@mui/material";
 import { Check } from "@mui/icons-material"
 
-
-const screen_dims = Shell.cmd("wm size").result()
-const width_height = Shell.cmd(`${screen_dims} | tr -s ' ' ':' | cut -d':' -f3`).result()
-const width = Shell.cmd(`${width_height} | cut -d'x' -f1`).result()
-const height = Shell.cmd(`${width_height} | cut -d'x' -f2`).result()
-
 const initialConfig = {
   background: "dark",
   colors: false,
-  wordwrap: true, // assuming true since it's present
+  wordwrap: true,
   logcatlevels: {
     V: false,
     D: false,
@@ -49,9 +44,7 @@ const initialConfig = {
   logcatformat: 'brief',
   dmesg: false,
   lines: '80',
-  save: true,
-  fallbackwidth: width,
-  fallbackheight: height,
+  save: false,
 }
 const backgroundsList = [
   {
@@ -276,7 +269,34 @@ const ListItemSwitch = (props) => {
   )
 }
 
+
+function useFindExistingFile(filePaths) {
+  const [config] = useConfig()
+  return React.useMemo(() => {
+    for (const filePath of filePaths) {
+      const file = new SuFile(String(filePath))
+      if (file.exist()) {
+        return file;
+      }
+    }
+    return null;
+  }, [config])
+}
+
+
 const App = () => {
+  const serviceScript = useFindExistingFile(["/data/adb/service.d/0000bootlive", "/data/adb/post-fs-data.d/0000bootlive"])
+
+  if (serviceScript === null) {
+    return (
+      <Page sx={{ p: 2 }} renderToolbar={RenderToolbar}>
+        <Box>
+          Unable to find service script
+        </Box>
+      </Page>
+    )
+  }
+
   const [config, setConfig] = useConfig();
 
   const logcatbuffers = React.useMemo(() => Object.entries(config.logcatbuffers).map((buf) => {
@@ -291,7 +311,7 @@ const App = () => {
     if (value) return key
   }).join(""), [config])
 
-  const commandString = React.useMemo(() => {
+  const parsedScript = React.useMemo(() => {
     let command = "";
 
     if (config.background) command += `${config.background} `;
@@ -320,16 +340,14 @@ const App = () => {
     }
 
     command += `lines=${config.lines} `;
-    command += `fallbackwidth=${config.fallbackwidth} `;
-    command += `fallbackheight=${config.fallbackheight}`;
+
 
     const parsedCommand = command.trim()
+    const scriptContent = serviceScript.read()
 
-    SuFile.write("/data/adb/liveboot.args.txt", parsedCommand)
-
-    return parsedCommand;
+    return scriptContent.replace(/(\/data\/adb\/modules\/livebootmagisk\/liveboot\s+boot\s+)(.+)(\s+fallbackwidth=(\d+)\s+fallbackheight=(\d+))/mi, "$1" + parsedCommand + "$3");
   }, [config])
-
+  
   const findBackground = React.useMemo(() => backgroundsList.find((t) => t.value === config.background), [config.background])
   const findLogcatFormat = React.useMemo(() => logcatFormatsList.find((t) => t.value === config.logcatformat), [config.logcatformat])
   const findLogcatBuffers = React.useMemo(() => logcatBuffersList.filter((buf) => logcatbuffers.includes(buf.value)).map((n) => n.name), [config.logcatbuffers])
@@ -338,7 +356,7 @@ const App = () => {
   return (
     <Page sx={{ p: 2 }} renderToolbar={RenderToolbar}>
 
-      <CodeBlock lang="">{`liveboot ${commandString}`}</CodeBlock>
+      <CodeBlock lang="bash">{parsedScript}</CodeBlock>
 
       <List subheader={<ListSubheader>Logcat appearence</ListSubheader>}>
         <ListItemSwitch conf="wordwrap" primary="Word wrap" />
@@ -370,7 +388,6 @@ const App = () => {
           }}
           onChange={(e) => setConfig("lines", e.target.value)} />
       </List>
-
     </Page>
   )
 }
