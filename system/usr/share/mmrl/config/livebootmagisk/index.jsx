@@ -1,5 +1,5 @@
 import { Page, Toolbar, CodeBlock } from "@mmrl/ui";
-import { useActivity, useConfig } from "@mmrl/hooks";
+import { useActivity, useConfig, useConfirm } from "@mmrl/hooks";
 import { withRequireNewVersion } from "@mmrl/hoc";
 import { ConfigProvider } from "@mmrl/providers";
 import {
@@ -283,9 +283,9 @@ function useFindExistingFile(filePaths) {
   }, [config])
 }
 
-
+const serviceFiles = ["/data/adb/service.d/0000bootlive", "/data/adb/post-fs-data.d/0000bootlive"]
 const App = () => {
-  const serviceScript = useFindExistingFile(["/data/adb/service.d/0000bootlive", "/data/adb/post-fs-data.d/0000bootlive"])
+  const serviceScript = useFindExistingFile(serviceFiles)
 
   if (serviceScript === null) {
     return (
@@ -297,6 +297,7 @@ const App = () => {
     )
   }
 
+  const confirm = useConfirm()
   const [config, setConfig] = useConfig();
 
   const logcatbuffers = React.useMemo(() => Object.entries(config.logcatbuffers).map((buf) => {
@@ -347,16 +348,37 @@ const App = () => {
 
     return scriptContent.replace(/(\/data\/adb\/modules\/livebootmagisk\/liveboot\s+boot\s+)(.+)(\s+fallbackwidth=(\d+)\s+fallbackheight=(\d+))/mi, "$1" + parsedCommand + "$3");
   }, [config])
-  
+
   const findBackground = React.useMemo(() => backgroundsList.find((t) => t.value === config.background), [config.background])
   const findLogcatFormat = React.useMemo(() => logcatFormatsList.find((t) => t.value === config.logcatformat), [config.logcatformat])
   const findLogcatBuffers = React.useMemo(() => logcatBuffersList.filter((buf) => logcatbuffers.includes(buf.value)).map((n) => n.name), [config.logcatbuffers])
   const findLogcatLevels = React.useMemo(() => logcatLevelsList.filter((lvl) => logcatlevels.includes(lvl.value)).map((n) => n.name), [config.logcatlevels])
 
+  
+
   return (
     <Page sx={{ p: 2 }} renderToolbar={RenderToolbar}>
 
       <CodeBlock lang="bash">{parsedScript}</CodeBlock>
+
+      <Button onClick={() => {
+        confirm({
+          title: "Save service script?",
+          description: <>Are you sure that you want to save the current configured service script? By pressing "Yes" the current script will be overwritten in <pre style={{ display: "inline" }}>/data/adb/service.d</pre> and <pre style={{ display: "inline" }}>/data/adb/post-fs-data.d</pre>.</>,
+          confirmationText: "Yes",
+          cancellationText: "No"
+        }).then(() => {
+          for (const filePath of serviceFiles) {
+            const file = new SuFile(String(filePath))
+            if (file.exist()) {
+              file.write(parsedScript)
+            } else {
+              file.create(SuFile.NEW_FILE)
+              file.write(parsedScript)
+            }
+          }
+        }).catch(() => { })
+      }} variant="contained" fullWidth sx={{ mt: 1 }}>Save</Button>
 
       <List subheader={<ListSubheader>Logcat appearence</ListSubheader>}>
         <ListItemSwitch conf="wordwrap" primary="Word wrap" />
