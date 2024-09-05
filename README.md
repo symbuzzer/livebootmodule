@@ -31,10 +31,10 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 > [!NOTE]
 > `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have the same file content in each of the three directories.
 
-1. Navigate to the `/data/adb/service.d` directory.
-2. Open the `0000bootlive` file using a text editor.
-3. Modify the settings as per your requirements (listed below). **⚠️ Warning: don't edit anything else in the file! ⚠️**
-4. Save the file and reboot your device to apply the changes.
+1. Open the `0000bootlive` files using a text editor.
+2. Modify the settings as per your requirements (listed below). **⚠️ Warning: don't edit anything else in the file! ⚠️**
+3. Save the file and reboot your device to apply the changes.
+
 - Background colors: ` ` (no character, it's the default Liveboot app's gray-ish background color), `dark`, `transparent`
 - Logcat levels: `V` (Verbose), `D` (Debug), `I` (Info), `W` (Warning), `E` (Error), `F` (Fatal), `S` (Silent)
 - Logcat buffers: `M` (Main), `S` (System), `R` (Radio), `E` (Events), `C` (Crash)
