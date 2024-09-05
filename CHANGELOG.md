@@ -1,5 +1,9 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v3.0.0
+- Added configuration UI for KernelSU and APatch (Thanks to [DerGoogler](https://github.com/DerGoogler))  
+Note: Please create issue if this version works or not
+  
 ## v2.0.4
 - Readded "install_script -l $MODPATH/0000bootlive" command to "/common/install.sh" due some devices still need it.  
 - [MMT-Extended](https://github.com/Zackptg5/MMT-Extended/commit/4331310fb19d28e3388ae0c5f155228fdfcb178d) updated to 3.7  
