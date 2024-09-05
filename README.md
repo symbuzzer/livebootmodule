@@ -25,7 +25,8 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 To customize Liveboot settings:
 
-> [!NOTE] > `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have in every three directories the same file content.
+> [!NOTE]
+> `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have in every three directories the same file content.
 
 1. Navigate to the `/data/adb/service.d` directory.
 2. Open the `0000bootlive` file using a text editor.
