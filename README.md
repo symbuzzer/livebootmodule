@@ -35,7 +35,7 @@ To customize Liveboot settings:
 
 ### Via an app interface
 
-Install [MMRL](htpps://github.com/DerGoogler/MMRL/releases) if you haven't already. Open the app and navigate to "installed", search for the **LiveBoot Magisk** module and click on "Config"
+Install [MMRL](https://github.com/DerGoogler/MMRL/releases) if you haven't already. Open the app and navigate to "installed", search for the **LiveBoot Magisk** module and click on "Config"
 
 ### Manual Customization Options
 
