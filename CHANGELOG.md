@@ -1,8 +1,11 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v3.0.1  
+- Added new README.md for customization guide and fixed CHANGELOG.md  
+  Thanks to [DerGoogler](https://github.com/DerGoogler) and [Peter Noël Muller](https://github.com/peternmuller) for detailed customization guide
+
 ## v3.0.0
-- Added configuration UI for KernelSU and APatch (Thanks to [DerGoogler](https://github.com/DerGoogler))  
-Note: Please create issue if this version works or not
+- Added configuration UI for [MMRL](https://github.com/DerGoogler/MMRL/releases) by [DerGoogler](https://github.com/DerGoogler) (Thanks to [DerGoogler](https://github.com/DerGoogler))  
   
 ## v2.0.4
 - Readded "install_script -l $MODPATH/0000bootlive" command to "/common/install.sh" due some devices still need it.  
