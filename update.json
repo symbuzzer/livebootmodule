@@ -1,6 +1,6 @@
 {
-  "version": "v3.0.1",
-  "versionCode": "030001",
+  "version": "v3.0.2",
+  "versionCode": "030002",
   "zipUrl": "https://github.com/symbuzzer/livebootmodule/releases/latest/download/livebootmodule.zip",
   "changelog": "https://raw.githubusercontent.com/symbuzzer/livebootmodule/main/CHANGELOG.md"
 }
