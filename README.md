@@ -21,23 +21,21 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 ## Liveboot Customization Guide
 
-### How to Edit Settings
+### 1. Setting via an app interface
 
-To customize Liveboot settings:
+1. Install [MMRL](https://github.com/DerGoogler/MMRL/releases) by [DerGoogler](https://github.com/DerGoogler) if you haven't already.
+2. Open the app and navigate to "installed", search for the **LiveBoot** module and click on "Config"
+
+### 2. Manual setting
 
 > [!NOTE]
 > `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have in every three directories the same file content.
 
-1. Navigate to the `/data/adb/service.d` directory.
-2. Open the `0000bootlive` file using a text editor.
-3. Modify the settings as per your requirements (listed below). **⚠️ Warning: don't edit anything else in the file! ⚠️**
-4. Save the file and reboot your device to apply the changes.
+1. Open the `0000bootlive` file in three directories listed above using a text editor.
+2. Modify the settings as per your requirements (listed below). **⚠️ Warning: don't edit anything else in the file! ⚠️**
+3. Save the file and reboot your device to apply the changes.
 
-### Via an app interface
-
-Install [MMRL](https://github.com/DerGoogler/MMRL/releases) if you haven't already. Open the app and navigate to "installed", search for the **LiveBoot Magisk** module and click on "Config"
-
-### Manual Customization Options
+#### Manual Customization Options
 
 - Background colors: ` ` (no character, it's the default Liveboot app's gray-ish background color), `dark`, `transparent`
 - Logcat levels: `V` (Verbose), `D` (Debug), `I` (Info), `W` (Warning), `E` (Error), `F` (Fatal), `S` (Silent)
