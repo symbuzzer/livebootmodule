@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v3.0.2
+- Edited README.md (Thanks to [Peter Noël Muller](https://github.com/peternmuller))
+  
 ## v3.0.1  
 - Added new README.md for customization guide and fixed CHANGELOG.md  
   Thanks to [DerGoogler](https://github.com/DerGoogler) and [Peter Noël Muller](https://github.com/peternmuller) for detailed customization guide
@@ -15,7 +18,7 @@ For support this project: [Patreon](https://avalibeyaz.com/patreon)
 - Removed unnecessary "install_script -l $MODPATH/0000bootlive" command from "/common/install.sh"
   
 ## v2.0.2
-- Try to use KernelSU's new feature "webroot html UI" (thanks to [0x0021](https://github.com/0x0021))
+- Try to use KernelSU's new feature "webroot html UI" (Thanks to [0x0021](https://github.com/0x0021))
   
 ## v2.0.1
 - Android 14 stable release
