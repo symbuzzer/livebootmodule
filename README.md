@@ -33,7 +33,7 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 1. Open the `0000bootlive` files in three directories listed above using a text editor.
 2. Modify the settings as per your requirements (listed below). **⚠️Warning: don't edit anything else in the file!⚠️**
-3. Save the file and reboot your device to apply the changes.
+3. Save the files and reboot your device to apply the changes.
 
 #### Manual Customization Options
 
