@@ -19,36 +19,36 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 [CHANGELOG.md](https://github.com/symbuzzer/livebootmodule/blob/main/CHANGELOG.md)
 
-## Liveboot Customization Guide
+## LiveBoot Customization Guide
 
-### 1. Setting via an app interface
+### Setting via an app interface
 
 1. Install [MMRL](https://github.com/DerGoogler/MMRL/releases) by [DerGoogler](https://github.com/DerGoogler) if you haven't already.
-2. Open the app and navigate to "installed", search for the **LiveBoot** module and click on "Config"
+2. Open the app, navigate to the "INSTALLED" section and search for the **LiveBoot** module and click on "CONFIG".
 
-### 2. Manual setting
+### Setting manually
 
 > [!NOTE]
-> `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have in every three directories the same file content.
+> `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have the same file content in each of the three directories.
 
-1. Open the `0000bootlive` file in three directories listed above using a text editor.
-2. Modify the settings as per your requirements (listed below). **⚠️ Warning: don't edit anything else in the file! ⚠️**
-3. Save the file and reboot your device to apply the changes.
+1. Open the `0000bootlive` files in three directories listed above using a text editor.
+2. Modify the settings as per your requirements (listed below). **⚠️Warning: don't edit anything else in the file!⚠️**
+3. Save the files and reboot your device to apply the changes.
 
 #### Manual Customization Options
 
-- Background colors: ` ` (no character, it's the default Liveboot app's gray-ish background color), `dark`, `transparent`
+- Background colors: ` ` (no character, it's the default LiveBoot app's gray-ish background color), `dark`, `transparent`
 - Logcat levels: `V` (Verbose), `D` (Debug), `I` (Info), `W` (Warning), `E` (Error), `F` (Fatal), `S` (Silent)
 - Logcat buffers: `M` (Main), `S` (System), `R` (Radio), `E` (Events), `C` (Crash)
 - Logcat formats: `brief`, `process`, `tag`, `thread`, `time`, `threadtime`
 - Logcat colors: `colors`, `logcatnocolors`
-- DMESG: `0--1` (dmesg off), `0-99` (dmesg on)
+- DMESG: `0--1` (off), `0-99` (on)
 - Lines: any value you want
 - Wordwrap: `wordwrap`, ` ` (no character)
 - Save logs: `save` (saves log in `/data/cache`, just like in the app), ` ` (no character)
 - Fallback width and fallback height: usually your device's screen resolution, but you can put other values to spoof another screen size
 
-### Example Configuration
+#### Example Configuration
 
 ```bash
 transparent logcatlevels=VDIWEFS logcatbuffers=MSREC logcatformat=threadtime colors dmesg=0-99 lines=80 wordwrap save fallbackwidth=1080 fallbackheight=2340
