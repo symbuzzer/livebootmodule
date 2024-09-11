@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Main",
+    "value": "M"
+  },
+  {
+    "name": "System",
+    "value": "S"
+  },
+  {
+    "name": "Radio",
+    "value": "R"
+  },
+  {
+    "name": "Events",
+    "value": "E"
+  },
+  {
+    "name": "Crash",
+    "value": "C"
+  }
+]
