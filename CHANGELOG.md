@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v3.0.3  
+- Code splitting for MMRL's mod configuration (Thanks to [DerGoogler](https://github.com/DerGoogler))
+- Fixed a bug with ListItemSelectDialog (Thanks to [DerGoogler](https://github.com/DerGoogler))
 ## v3.0.2
 - Edited README.md (Thanks to [Peter Noël Muller](https://github.com/peternmuller))
   
