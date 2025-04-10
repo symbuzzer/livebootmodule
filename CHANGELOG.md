@@ -1,5 +1,8 @@
 For support this project: [Patreon](https://avalibeyaz.com/patreon)  
 --------------  
+## v4.0.0
+- Removed MMRL mod configuration feature due not works anymore  
+
 ## v3.0.3  
 - Code splitting for MMRL's mod configuration (Thanks to [DerGoogler](https://github.com/DerGoogler))
 - Fixed a bug with ListItemSelectDialog (Thanks to [DerGoogler](https://github.com/DerGoogler))
