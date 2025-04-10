@@ -21,13 +21,6 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 ## LiveBoot Customization Guide
 
-### Setting via an app interface
-
-1. Install [MMRL](https://github.com/DerGoogler/MMRL/releases) by [DerGoogler](https://github.com/DerGoogler) if you haven't already.
-2. Open the app, navigate to the "INSTALLED" section and search for the **LiveBoot** module and click on "CONFIG".
-
-### Setting manually
-
 > [!NOTE]
 > `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have the same file content in each of the three directories.
 
