@@ -1,5 +1,5 @@
-rm -f /data/adb/post-fs-data.d/0000bootlive
-rm -f /data/adb/service.d/0000bootlive
+rm /data/adb/post-fs-data.d/0000bootlive
+rm /data/adb/service.d/0000bootlive
 
 # Don't modify anything after this
 if [ -f $INFO ]; then
