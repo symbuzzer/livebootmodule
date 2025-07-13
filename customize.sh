@@ -1,71 +1,49 @@
-##########################################################################################
-#
-# MMT Extended Config Script
-#
-##########################################################################################
 
-##########################################################################################
-# Config Flags
-##########################################################################################
+ui_print "- Getting screen size"
 
-# Uncomment and change 'MINAPI' and 'MAXAPI' to the minimum and maximum android version for your mod
-# Uncomment DYNLIB if you want libs installed to vendor for oreo+ and system for anything older
-# Uncomment DEBUG if you want full debug logs (saved to /sdcard)
-#MINAPI=21
-#MAXAPI=25
-#DYNLIB=true
-#DEBUG=true
+output="$(wm size)"
+if [ "$output" ]
+then	width_height="$(echo $output | tr -s ' ' ':' | cut -d':' -f3)"
+	width="$(echo $width_height | cut -d'x' -f1)"
+	height="$(echo $width_height | cut -d'x' -f2)"
+else    width=1080 height=1920
+fi
 
-##########################################################################################
-# Replace list
-##########################################################################################
+ui_print "  - $width x $height"
 
-# List all directories you want to directly replace in the system
-# Check the documentations for more info why you would need this
 
-# Construct your list in the following format
-# This is an example
-REPLACE_EXAMPLE="
-/system/app/Youtube
-/system/priv-app/SystemUI
-/system/priv-app/Settings
-/system/framework
-"
+ui_print "- Generating config file"
 
-# Construct your own list here
-REPLACE="
-"
+cat > "$MODPATH/config" <<EOF
+dark
+logcatlevels=WEFS
+logcatbuffers=C
+logcatformat=brief
+logcatnocolors
+dmesg=0--1
+lines=80
+wordwrap
+fallbackwidth=$width
+fallbackheight=$height
+EOF
 
-##########################################################################################
-# Permissions
-##########################################################################################
 
-set_permissions() {
-  # Remove this if adding to this function
+ui_print "- Symlinking service/post-fs-data scripts"
 
-  # Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
-  # Some examples:
-  
-  # For directories (includes files in them):
-  # set_perm_recursive  <dirname>                <owner> <group> <dirpermission> <filepermission> <contexts> (default: u:object_r:system_file:s0)
-  
-  # set_perm_recursive $MODPATH/system/lib 0 0 0755 0644
-  # set_perm_recursive $MODPATH/system/vendor/lib/soundfx 0 0 0755 0644
+ln -s loader.sh "$MODPATH/service.sh"
+ln -s loader.sh "$MODPATH/post-fs-data.sh"
 
-  # For files (not in directories taken care of above)
-  # set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
-  
-  # set_perm $MODPATH/system/lib/libart.so 0 0 0644
-  # set_perm /data/local/tmp/file.txt 0 0 644
 
-  set_perm_recursive $MODPATH/liveboot 0 0 0775 0775
-  set_perm_recursive $MODPATH/libdaemonize.so 0 0 0775 0775
-}
+ui_print "- Removing unneeded files"
 
-##########################################################################################
-# MMT Extended Logic - Don't modify anything after this
-##########################################################################################
+for file in CHANGELOG.md
+do rm "$MODPATH/$file"
+done
 
-SKIPUNZIP=1
-unzip -qjo "$ZIPFILE" 'common/functions.sh' -d $TMPDIR >&2
-. $TMPDIR/functions.sh
+
+ui_print "- Setting file permissions"
+
+set_perm "$MODPATH/loader.sh" 0 0 0755
+set_perm "$MODPATH/config" 0 0 0644
+set_perm "$MODPATH/libdaemonize.so" 0 0 0755
+set_perm "$MODPATH/liveboot.apk" 0 0 0644

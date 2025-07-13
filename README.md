@@ -9,7 +9,7 @@ Preview: https://www.youtube.com/watch?v=N0tqzVWxpJk
 
 ## Supported devices & ROMs
 
-It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should work all rooted devices via Magisk, KernelSU and APatch.
+It has been successfully tested on many Android 15, 14, 13 and 12 based ROMs. Should work all rooted devices via Magisk, KernelSU and APatch.
 
 ## Download
 
@@ -22,10 +22,10 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 ## LiveBoot Customization Guide
 
 > [!NOTE]
-> `0000liveboot` is stored in three directories, `/data/adb/service.d`, `/data/adb/post-fs-data.d` and `/data/adb/livebootmagisk`. It is recommended to have the same file content in each of the three directories.
+> `loader.sh`, `config` and `liveboot.apk` are in the directory `/data/adb/livebootmagisk`.
 
-1. Open the `0000bootlive` files in three directories listed above using a text editor.
-2. Modify the settings as per your requirements (listed below). **⚠️Warning: don't edit anything else in the file!⚠️**
+1. Open `config` file using a text editor.
+2. Modify the settings as per your requirements (listed below). **⚠️Warning: don't add anything else (even a comment line) to the file!⚠️**
 3. Save the files and reboot your device to apply the changes.
 
 #### Manual Customization Options
@@ -43,12 +43,22 @@ It has been successfully tested on many Android 14, 13 and 12 based ROMs. Should
 
 #### Example Configuration
 
-```bash
-transparent logcatlevels=VDIWEFS logcatbuffers=MSREC logcatformat=threadtime colors dmesg=0-99 lines=80 wordwrap save fallbackwidth=1080 fallbackheight=2340
+```sh
+transparent
+logcatlevels=VDIWEFS
+logcatbuffers=MSREC
+logcatformat=threadtime
+colors
+dmesg=0-99
+lines=80
+wordwrap
+save
+fallbackwidth=1080
+fallbackheight=2340
 ```
 
 ## Licenses
 
-- 0000bootlive (original is 0000liveboot), liveboot(.apk), libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).
+- loader.sh (originally 0000liveboot), liveboot.apk, libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).
 - For detailed licenses: [COPYING](https://github.com/Chainfire/liveboot/blob/master/COPYING), [LICENSE](https://github.com/Chainfire/liveboot/blob/master/LICENSE)
 - Other parts of this project are licensed under [GPLv3](https://github.com/symbuzzer/livebootmagisk/blob/main/LICENSE) too.
