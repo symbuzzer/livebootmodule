@@ -59,6 +59,8 @@ fallbackheight=2340
 
 ## Licenses
 
-- loader.sh (originally 0000liveboot), liveboot.apk, libdaemonize.so files are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).
+- loader.sh (originally 0000liveboot), liveboot.apk, libdaemonize.so files* are licensed under the [GPLv3](https://github.com/Chainfire/liveboot/blob/master/LICENSE) by [Jorrit "Chainfire" Jongma](https://github.com/Chainfire).
 - For detailed licenses: [COPYING](https://github.com/Chainfire/liveboot/blob/master/COPYING), [LICENSE](https://github.com/Chainfire/liveboot/blob/master/LICENSE)
 - Other parts of this project are licensed under [GPLv3](https://github.com/symbuzzer/livebootmagisk/blob/main/LICENSE) too.
+
+**Source: https://github.com/Chainfire/liveboot/tree/master/liveBootAni2/src/main/java/eu/chainfire/liveboot*
