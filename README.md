@@ -22,7 +22,7 @@ It has been successfully tested on many Android 15, 14, 13 and 12 based ROMs. Sh
 ## LiveBoot Customization Guide
 
 > [!NOTE]
-> `loader.sh`, `config` and `liveboot.apk` are in the directory `/data/adb/livebootmagisk`.
+> `loader.sh`, `config` and `liveboot.apk` are in the directory `/data/adb/modules/livebootmagisk`.
 
 1. Open `config` file using a text editor.
 2. Modify the settings as per your requirements (listed below). **⚠️Warning: don't add anything else (even a comment line) to the file!⚠️**
