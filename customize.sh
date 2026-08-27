@@ -23,6 +23,7 @@ logcatnocolors
 dmesg=0--1
 lines=80
 wordwrap
+suicide_delay_ms=0
 fallbackwidth=$width
 fallbackheight=$height
 EOF

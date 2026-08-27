@@ -9,7 +9,7 @@ Preview: https://www.youtube.com/watch?v=N0tqzVWxpJk
 
 ## Supported devices & ROMs
 
-It has been successfully tested on many Android 15, 14, 13 and 12 based ROMs. Should work all rooted devices via Magisk, KernelSU and APatch.
+It has been successfully tested on many Android 16, 15, 14, 13 and 12 based ROMs. Should work all rooted devices via Magisk, KernelSU and APatch.
 
 ## Download
 
@@ -39,6 +39,7 @@ It has been successfully tested on many Android 15, 14, 13 and 12 based ROMs. Sh
 - Lines: any value you want
 - Wordwrap: `wordwrap`, ` ` (no character)
 - Save logs: `save` (saves log in `/data/cache`, just like in the app), ` ` (no character)
+- Suicide delay: wait this many milliseconds before LiveBoot exits after boot is considered complete. Useful to cover black gaps after the stock boot animation disappears. 0 disables
 - Fallback width and fallback height: usually your device's screen resolution, but you can put other values to spoof another screen size
 
 #### Example Configuration
@@ -53,6 +54,7 @@ dmesg=0-99
 lines=80
 wordwrap
 save
+suicide_delay_ms=0
 fallbackwidth=1080
 fallbackheight=2340
 ```
