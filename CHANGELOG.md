@@ -1,6 +1,11 @@
 To support this project: [Patreon](https://avalibeyaz.com/patreon)
 --------------
 ## v5.0.0
+- Update Liveboot APK to use AntiOblivionis' working fork (https://github.com/AntiOblivionis/liveboot)
+- Update config accordingly
+- Update loader.sh to use de-minified version
+
+## v5.0.0
 - Code refactor
 
 ## v4.0.0
