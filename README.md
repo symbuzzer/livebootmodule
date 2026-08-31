@@ -54,7 +54,7 @@ dmesg=0-99
 lines=80
 wordwrap
 save
-suicide_delay_ms=0
+suicidedelay=0
 fallbackwidth=1080
 fallbackheight=2340
 ```
