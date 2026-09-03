@@ -1,5 +1,9 @@
 To support this project: [Patreon](https://avalibeyaz.com/patreon)
 --------------
+
+## v6.0.1 *(Thanks to [EmilienCourt](https://github.com/EmilienCourt))*
+- Fixed Android 16 support
+
 ## v6.0.0 *(Thanks to [EmilienCourt](https://github.com/EmilienCourt))*
 - Added Android 16 support
 - Update Liveboot APK to use [AntiOblivionis' working fork](https://github.com/AntiOblivionis/liveboot)
