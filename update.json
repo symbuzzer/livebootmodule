@@ -1,6 +1,6 @@
 {
-  "version": "v6.0.0",
-  "versionCode": "060000",
+  "version": "v6.0.1",
+  "versionCode": "060001",
   "zipUrl": "https://github.com/symbuzzer/livebootmodule/releases/latest/download/livebootmodule.zip",
   "changelog": "https://raw.githubusercontent.com/symbuzzer/livebootmodule/main/CHANGELOG.md"
 }
